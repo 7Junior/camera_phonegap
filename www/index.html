@@ -30,12 +30,37 @@
        }
        );
    }
-
+   function(){
+     navegator.notification.vibrate(2000);
+   }
+function alertar(){
+     navegator.notification.alert("seu celular será desligado agora!",
+     function(){},
+     "Desligar",
+     "ok",
+     )
+   }
+     function confirmar(){
+      navegator.notification.confirm(
+        "voce deseja realmete sair?",
+        apos_confirmar,
+        "sair",
+        "sim,Não"
+        ); 
+     
+   }
+   
+   function apos_confirmar(botao){
+     alerta("Apos alerta");
+   }
 
     </script>
   </head>
   <body>
     <h1>Camera</h1>
     <button onclick="getPicture();">Foto</button>
+    <button onclick="vibrar();">vibrar</button>
+     <button onclick="alertar();">alerta</button>
+     <button onclick="confirmar();">confirmação</button>
   </body>
 </html>
