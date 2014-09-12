@@ -1,62 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Acceleration Example</title>
-    <meta charset="utf-8">
-
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
-    <script type="text/javascript" charset="utf-8">
-
-    // Wait for device API libraries to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-
-    // device APIs are available
-    //
-    function onDeviceReady() {
-       
-    }
-
-   function.getPicture(){
-     navigator.camera.getPicture(
-       function(){},
-       function(){},
-       
-       );
-   }
-   function(){
-     navegator.notification.vibrate(2000);
-   }
+<head>
+<title>Acceleration Example</title>
+<meta charset="utf-8">
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8">
+// Wait for device API libraries to load
+//
+document.addEventListener("deviceready", onDeviceReady, false);
+// device APIs are available
+//
+function onDeviceReady() {
+}
+function getPicture(){
+navigator.camera.getPicture( function(){}, function(){});
+}
+function vibrar(){
+navigator.notification.vibrate(2000);
+}
 function alertar(){
-     navegator.notification.alert("seu celular será desligado agora!",
-     function(){},
-     "Desligar",
-     "ok",
-     )
-   }
-     function confirmar(){
-      navegator.notification.confirm(
-        "voce deseja realmete sair?",
-        apos_confirmar,
-        "sair",
-        "sim,Não"
-        ); 
-     
-   }
-   
-   function apos_confirmar(botao){
-     alerta("Apos alerta");
-   }
-
-    </script>
-  </head>
-  <body>
-    <h1>Camera</h1>
-    <button onclick="getPicture();">Foto</button>
-    <button onclick="vibrar();">vibrar</button>
-     <button onclick="alertar();">alerta</button>
-     <button onclick="confirmar();">confirmação</button>
-  </body>
+navigator.notification.alert(
+'Seu celular será desligado agora!',
+function(){},
+'Desligar',
+'Ok',
+);
+}
+function confirmar(){
+navigator.notification.confirm(
+'Você deseja realmente sair?',
+apos_confirmar,
+'Sair',
+'Sim,Não'
+);
+}
+function apos_confirmar(botao){
+alert('Você digitou:' + botao);
+}
+</script>
+</head>
+<body>
+<h1>Camera</h1>
+<button onclick="getPicture();">Foto</button>
+<button onclick="vibrar();">Vibrar</button>
+<button onclick="alertar();">Alerta</button>
+<button onclick="confirmar();">Confirmação</button>
+</body>
 </html>
